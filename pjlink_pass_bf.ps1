@@ -1,14 +1,14 @@
 ﻿<#  
 .SYNOPSIS  
-    This script test connectivity to devices.        
+    This script do worlist attack against pjlink       
 .DESCRIPTION  
-    Script takes IP addresses from file (one IP per line) and test TCP port connection.
+    Script takes passwords from worlist (one IP per line) and test against pjlink device.
 .NOTES  
-    File Name      : test_tcp.ps1  
+    File Name      : pjlink_pass_bf.ps1  
     Author         : Jiri Kindl; kindl_jiri@yahoo.com
     Prerequisite   : PowerShell V2 over Vista and upper.
-    Version        : 20191202
-    Copyright 2015 - Jiri Kindl    
+    Version        : 20191206
+    Copyright 2019 - Jiri Kindl    
 .LINK  
     
 .EXAMPLE  
@@ -140,7 +140,7 @@ Function TestPJLinkPassword($password, $device, $port) {
             #to remove hyphens and downcase letters add:
             $hash = $hash.ToLower() -replace '-', ''
             $command = $hash+$command
-            #$command
+            $command
             $Writer.WriteLine($command)
             $Writer.Flush()
             $state = 'auth_p2'
